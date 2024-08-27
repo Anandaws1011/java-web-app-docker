@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Project Coordinates -->
+         Project Coordinates 
     <groupId>com.mt</groupId>
     <artifactId>java-web-app</artifactId>
     <packaging>war</packaging>
@@ -18,7 +18,7 @@
         <url>http://mithuntechnologies.com/</url>
     </organization>
 
-    <!-- Properties -->
+         Properties 
     <properties>
         <spring.version>5.0.7.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
@@ -27,9 +27,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-    <!-- Dependencies -->
+         Dependencies 
     <dependencies>
-        <!-- Test Dependencies -->
+             Test Dependencies
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -49,7 +49,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Compile Dependencies -->
+             Compile Dependencies 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -71,7 +71,7 @@
             <version>${spring.version}</version>
         </dependency>
 
-        <!-- Provided Dependencies -->
+             Provided Dependencies 
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -90,7 +90,7 @@
         </dependency>
     </dependencies>
 
-    <!-- Build Configuration -->
+         Build Configuration
     <build>
         <plugins>
             <plugin>

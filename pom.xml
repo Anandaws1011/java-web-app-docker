@@ -12,11 +12,6 @@
 	
 	<description>Maven Web Project</description>
 
-	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
-	</organization>
-
 	<url>http://maven.apache.org</url>
 
 	<dependencies>

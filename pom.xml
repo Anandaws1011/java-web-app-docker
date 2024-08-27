@@ -1,11 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>in.javahome</groupId>
-	<artifactId>myweb</artifactId>
+	
+	<groupId>com.mt</groupId>
+	<artifactId>java-web-app</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.5</version>
-	<name>my-app</name>
+	<version>1.0</version>
+	
+	<name>Maven Web Application</name>
+	<url>http://mithuntechnologies.com</url>
+	
+	<description>Maven Web Project</description>
+
+	<organization>
+		<name>Mithun Technologies</name>
+		<url>http://mithuntechnologies.com/</url>
+	</organization>
 	
 	<!-- Demo on Github Webhooks-->
 

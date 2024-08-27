@@ -13,14 +13,14 @@ node{
     
     
     stage('Build Docker Image'){
-        sh 'docker build -t dockerhandson/java-web-app .'
+        sh 'docker build -t anandaws/java-web-app .'
     }
     
     stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
-          sh "docker login -u dockerhandson -p ${Docker_Hub_Pwd}"
+          sh "docker login -u anand2592 -p ${Docker_Hub_Pwd}"
         }
-        sh 'docker push dockerhandson/java-web-app'
+        sh 'docker push anand2592/java-web-app'
      }
      
       stage('Run Docker Image In Dev Server'){
@@ -28,10 +28,10 @@ node{
         def dockerRun = ' docker run  -d -p 8080:8080 --name java-web-app dockerhandson/java-web-app'
          
          sshagent(['DOCKER_SERVER']) {
-          sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.20.72 docker stop java-web-app || true'
-          sh 'ssh  ubuntu@172.31.20.72 docker rm java-web-app || true'
-          sh 'ssh  ubuntu@172.31.20.72 docker rmi -f  $(docker images -q) || true'
-          sh "ssh  ubuntu@172.31.20.72 ${dockerRun}"
+          sh 'ssh -o StrictHostKeyChecking=no ubuntu@13.201.43.211 docker stop java-web-app || true'
+          sh 'ssh  ubuntu@13.201.43.211 docker rm java-web-app || true'
+          sh 'ssh  ubuntu@13.201.43.211 docker rmi -f  $(docker images -q) || true'
+          sh "ssh  ubuntu@13.201.43.211 ${dockerRun}"
        }
        
     }

@@ -27,7 +27,7 @@ node{
         
         def dockerRun = ' docker run  -d -p 8080:8080 --name java-web-app anand2592/javawebapp'
          stage("Deploy to dockercontinor in docker deployer"){
-              sshagent(['docker_ssh_password2']) {
+              sshagent(['docker_ssh_password3']) {
           sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.41.48 docker stop java-web-app || true'
       sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.41.48 docker rm -f cloudcandy || true"
             sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.41.48 docker run -d -p 8080:8080 --name cloudcandy anand2592/javawebapp:${buildNumber}"           

@@ -26,15 +26,13 @@ node{
       stage('Run Docker Image In Dev Server'){
         
         def dockerRun = ' docker run  -d -p 8080:8080 --name java-web-app anand2592/javawebapp'
-         
-         sshagent(['DOCKER_SERVER']) {
+         stage("Deploy to dockercontinor in docker deployer"){
+              sshagent(['docker_ssh_password2']) {
           sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.41.48 docker stop java-web-app || true'
-          sh 'ssh  ubuntu@172.31.41.48 docker rm java-web-app || true'
-          sh 'ssh  ubuntu@172.31.41.48 docker rmi -f  $(docker images -q) || true'
-          sh "ssh  ubuntu@172.31.41.48 ${dockerRun}"
+      sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.41.48 docker rm -f cloudcandy || true"
+            sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.41.48 docker run -d -p 8080:8080 --name cloudcandy anand2592/javawebapp:${buildNumber}"           
+    }  
        }
-       
-    }
-     
-     
 }
+}
+          
